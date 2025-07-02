@@ -86,7 +86,11 @@
 
                 $query = "INSERT INTO user (name, email, password) VALUES ('$name', '$email', '$password')";
                 $execute = mysqli_query($con, $query);
-               
+                
+                if ($execute) {
+            header("Location: view_users.php");
+            exit();
+        } 
 
             }
         ?>
